@@ -13,13 +13,14 @@ public class Evento implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue(strategy= GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long codigo;
 	
 	private String nome;
 	private String local;
 	private String data;
 	private String horario;
+	private String responsavel;
 	
 	public long getCodigo() {
 		return codigo;
@@ -59,6 +60,14 @@ public class Evento implements Serializable{
 	
 	public void setHorario(String horario) {
 		this.horario = horario;
+	}
+
+	public String getResponsavel() {
+		return responsavel;
+	}
+
+	public void setResponsavel(String responsavel) {
+		this.responsavel = responsavel;
 	}
 	
 }
