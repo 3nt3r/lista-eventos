@@ -24,14 +24,13 @@
 
 	<div class="container-sm">
 
-
 		<h1 class="espacoTitulo">Lista de Eventos</h1>
 
 		<h3>
 			<a class="btn btn-secondary espacoBotao" href="/cadastrarEvento" role="button">Cadastrar Evento</a>
 		</h3>
 
-		<table class="table">
+		<table class="table table-striped">
 		  <thead class="thead-dark">
 			<tr>
 			  <th scope="col">Evento</th>
@@ -45,7 +44,10 @@
 		  <tbody>
 			<tr th:each="evento: ${eventos}">
 				<div class="row">
-					<td> <span th:text="${evento.nome}"> </span> </td>
+					<td>
+						<a th:href="${(#mvc.url('EC#detalhesEvento').arg(0, evento.codigo).build())}" class="badge badge-secondary"> Abrir </a>
+						<span th:text="${evento.nome}"> </span>
+					</td>
 					<td> <span th:text="${evento.local}"> </span> </td>
 					<td> <span th:text="${evento.data}"> </span> </td>
 					<td> <span th:text="${evento.horario}"> </span> </td>
