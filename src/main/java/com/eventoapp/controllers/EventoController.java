@@ -1,5 +1,7 @@
 package com.eventoapp.controllers;
 
+import com.eventoapp.models.Convidado;
+import com.eventoapp.repository.ConvidadoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,12 +18,15 @@ public class EventoController {
 	@Autowired
 	private EventoRepository eventoRepository;
 
-	@RequestMapping(value="/cadastrarEvento", method=RequestMethod.GET)
+	@Autowired
+	private ConvidadoRepository convidadoRepository;
+
+	@RequestMapping(value="/cadastrarEvento", method = RequestMethod.GET)
 	public String form(){
 		return "evento/formEvento";
 	}
 
-	@RequestMapping(value="/cadastrarEvento", method=RequestMethod.POST)
+	@RequestMapping(value="/cadastrarEvento", method = RequestMethod.POST)
 	public String form(Evento evento){
 		eventoRepository.save(evento);
 		return "redirect:/cadastrarEvento";
@@ -35,12 +40,20 @@ public class EventoController {
 		return modelAndView;
 	}
 
-	@RequestMapping("/{codigo}")
+	@RequestMapping(value="/{codigo}", method = RequestMethod.GET)
 	public ModelAndView detalhesEvento(@PathVariable("codigo") long codigo){
 		Evento evento = eventoRepository.findByCodigo(codigo);
 		ModelAndView modelAndView = new ModelAndView("evento/detalhesEvento");
 		modelAndView.addObject("evento", evento);
 		return modelAndView;
 	}
-	
+
+	@RequestMapping(value="/{codigo}", method = RequestMethod.POST)
+	public String detalhesEventoPost(@PathVariable("codigo") long codigo, Convidado convidado){
+		Evento evento = eventoRepository.findByCodigo(codigo);
+		convidado.setEvento(evento);
+		convidadoRepository.save(convidado);
+		return "redirect:/{codigo}";
+	}
+
 }

@@ -18,6 +18,9 @@
         .negrito{
             font-weight: bolder;
         }
+        .distanciaBotoes{
+            padding-bottom: 25px;
+        }
     </style>
 
     <title>Detalhes do Evento</title>
@@ -26,6 +29,7 @@
 <body>
 
     <div class="container-sm">
+
 
         <h1 class="espacoTitulo"> Evento </h1>
 
@@ -73,11 +77,20 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                Formulário Aqui!
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-light" data-dismiss="modal"> Cancelar </button>
-                                <button type="button" class="btn btn-secondary"> Realizar Cadastro </button>
+                                <form method="post">
+                                    <div class="row distanciaBotoes">
+                                        <div class="col">
+                                            Seu Nome: <input type="text" value="" name="nomeConvidado" class="form-control" />
+                                        </div>
+                                        <div class="col">
+                                            Seu RG: <input type="text" value="" name="rg" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-light" data-dismiss="modal"> Cancelar </button>
+                                        <button type="submit" class="btn btn-secondary"> Realizar Cadastro </button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -86,9 +99,9 @@
                 <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalCenter">
                     Quero Participar
                 </button>
-
             </div>
         </div>
+
 
     </div>
 
