@@ -3,6 +3,8 @@ package com.eventoapp.models;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Evento implements Serializable{
@@ -12,11 +14,25 @@ public class Evento implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long codigo;
-	
+
+	@NotNull (message = "O campo está vazio!")
+	@Size(min = 2, max = 50, message="Dados insuficientes!")
 	private String nome;
+
+	@NotNull (message = "O campo está vazio!")
+	@Size(min = 2, max = 50, message="Dados insuficientes!")
 	private String local;
+
+	@NotNull (message = "O campo está vazio!")
+	@Size(min = 2, max = 50, message="Dados insuficientes!")
 	private String data;
+
+	@NotNull (message = "O campo está vazio!")
+	@Size(min = 2, max = 50, message="Dados insuficientes!")
 	private String horario;
+
+	@NotNull (message = "O campo está vazio!")
+	@Size(min = 2, max = 50, message="Dados insuficientes!")
 	private String responsavel;
 
 	@OneToMany
