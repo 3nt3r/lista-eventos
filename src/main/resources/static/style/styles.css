@@ -1,0 +1,22 @@
+.espacoTitulo{
+    padding-top: 25px;
+    padding-bottom: 15px;
+}
+
+.espacoBotao{
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.negrito{
+    font-weight: bolder;
+}
+
+.distanciaBotoes{
+    padding-bottom: 25px;
+}
+
+.distanciaTabela{
+    padding-top: 25px;
+    padding-bottom: 25px;
+}

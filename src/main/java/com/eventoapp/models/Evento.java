@@ -15,24 +15,24 @@ public class Evento implements Serializable{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long codigo;
 
-	@NotNull (message = "O campo está vazio!")
-	@Size(min = 2, max = 50, message="Dados insuficientes!")
+	@NotNull
+	@Size(min = 2, max = 50)
 	private String nome;
 
-	@NotNull (message = "O campo está vazio!")
-	@Size(min = 2, max = 50, message="Dados insuficientes!")
+	@NotNull
+	@Size(min = 2, max = 50)
 	private String local;
 
-	@NotNull (message = "O campo está vazio!")
-	@Size(min = 2, max = 50, message="Dados insuficientes!")
+	@NotNull
+	@Size(min = 2, max = 50)
 	private String data;
 
-	@NotNull (message = "O campo está vazio!")
-	@Size(min = 2, max = 50, message="Dados insuficientes!")
+	@NotNull
+	@Size(min = 2, max = 50)
 	private String horario;
 
-	@NotNull (message = "O campo está vazio!")
-	@Size(min = 2, max = 50, message="Dados insuficientes!")
+	@NotNull
+	@Size(min = 2, max = 50)
 	private String responsavel;
 
 	@OneToMany

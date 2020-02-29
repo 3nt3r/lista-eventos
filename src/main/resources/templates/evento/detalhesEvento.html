@@ -6,25 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <style>
-        .espacoTitulo{
-            padding-top: 25px;
-            padding-bottom: 15px;
-        }
-        .espacoBotao{
-            margin-top: 25px;
-            margin-bottom: 25px;
-        }
-        .negrito{
-            font-weight: bolder;
-        }
-        .distanciaBotoes{
-            padding-bottom: 25px;
-        }
-        .distanciaTabela{
-            padding-top: 25px;
-        }
-    </style>
+    <link rel="stylesheet" href="style/styles.css"/>
 
     <title>Detalhes do Evento</title>
 
@@ -119,6 +101,7 @@
                     <tr>
                         <th scope="col">Nome</th>
                         <th scope="col">RG</th>
+                        <th scope="col">Deletar</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -128,6 +111,9 @@
                         </td>
                         <td>
                             <span th:text="${convidado.rg}"></span>
+                        </td>
+                        <td>
+                            <a th:href="${(#mvc.url('EC#deletarConvidado').arg(0, convidado.rg).build())}" class="badge badge-secondary"> x </a>
                         </td>
                     </tr>
                     </tbody>

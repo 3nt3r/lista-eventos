@@ -6,16 +6,7 @@
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<style>
-		.espacoTitulo{
-			padding-top: 25px;
-			padding-bottom: 15px;
-		}
-		.espacoBotao{
-			margin-top: 25px;
-			margin-bottom: 25px;
-		}
-	</style>
+	<link rel="stylesheet" href="style/styles.css"/>
 
 	<title> Lista de Eventos </title>
 	
@@ -33,13 +24,14 @@
 
 		<table class="table table-striped">
 		  <thead class="thead-dark">
-			<tr>
+		  <tr>
 			  <th scope="col">Evento</th>
 			  <th scope="col">Local</th>
 			  <th scope="col">Data</th>
 			  <th scope="col">Horário</th>
 			  <th scope="col">Responsável</th>
-			</tr>
+			  <th scope="col">Deletar</th>
+		  </tr>
 		  </thead>
 
 		  <tbody>
@@ -53,6 +45,9 @@
 					<td> <span th:text="${evento.data}"> </span> </td>
 					<td> <span th:text="${evento.horario}"> </span> </td>
 					<td> <span th:text="${evento.responsavel}"> </span> </td>
+					<td>
+						<a th:href="${(#mvc.url('EC#deletarEvento').arg(0, evento.codigo).build())}" class="badge badge-secondary"> x </a>
+					</td>
 				</div>
 			</tr>
 		  </tbody>
